@@ -3,6 +3,7 @@ const app = express();
 const port = 4000;
 const convert = require('color-convert');
 
+app.get('/', (req, res) => res.send('<h1>Hotpink is the new black</h1>'));
 app.get('/convert/rgbtohsl', (req, res) => {
   let rgbColor = req.query.color.split(',').map(color => parseInt(color));
   res.send(convert.rgb.hsl(rgbColor));
