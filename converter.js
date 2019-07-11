@@ -3,7 +3,10 @@ const router = express.Router();
 const convert = require('color-convert');
 const errHandler = require('./messages');
 
+// Check the input and send error message when needed
 router.use(errHandler);
+
+// Convert according to requested path
 router.get('/rgbtohsl', (req, res) => {
   let rgbColor = req.query.color.split(',').map(color => parseInt(color));
   res.send(convert.rgb.hsl(rgbColor));
