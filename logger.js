@@ -1,3 +1,4 @@
+// Log requested method, path and time of request
 module.exports = logger = (req, res, next) => {
   const time = new Date();
   const { method, path } = req;
